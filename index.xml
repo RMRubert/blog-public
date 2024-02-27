@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:distill="https://distill.pub/journal/" version="2.0">
+  <channel>
+    <title>RMRubert's blog</title>
+    <link>https://blog.rmrubert.eu</link>
+    <atom:link href="https://blog.rmrubert.eu/index.xml" rel="self" type="application/rss+xml"/>
+    <description>The personal blog of RMRubert.
+</description>
+    <image>
+      <title>RMRubert's blog</title>
+      <url>https://blog.rmrubert.eu/favicon.ico</url>
+      <link>https://blog.rmrubert.eu</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Wed, 27 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>How to remove silence at start and end of songs in your music collection</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection</link>
+      <description>After failing to remove the songs's silences only from the start or the end with FFmpeg, I ended up using an open-source tool (mp3splt-gtk) to achieve this. It did not have a particular good default settings for this purpose but it ended up doing a perfect job.</description>
+      <guid>https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection</guid>
+      <pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/images/miniatura.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Making my first game (another Pong) in Python.</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2023-06-17-making-my-first-game-another-pong-in-python</link>
+      <description>Thanks to the power of Python and the open-source library Pyxel I have managed to make my very first game, a Pong game. Pyxel is a library that helps to make retro-like games. The path was no bed of roses but the game is 100% playable, and you can play in your browser.</description>
+      <guid>https://blog.rmrubert.eu/posts/2023-06-17-making-my-first-game-another-pong-in-python</guid>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2023-06-17-making-my-first-game-another-pong-in-python/images/image3.png" medium="image" type="image/png" width="698" height="501"/>
+    </item>
+    <item>
+      <title>Repurposing an old Pinnacle TV capture card</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2022-12-30-repurposing-an-old-pinnacle-tv-capture-card</link>
+      <description>As an analogue video-capturing device. In this post, I explain how to make an old tv Pinnacle capture card (chipset Bt848) work in a modern Windows 10 x64 pro. Using a modded version of DScaler, we can use either the composite or S-video entrance to capture analogue video signals such as the PSone.</description>
+      <guid>https://blog.rmrubert.eu/posts/2022-12-30-repurposing-an-old-pinnacle-tv-capture-card</guid>
+      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2022-12-30-repurposing-an-old-pinnacle-tv-capture-card/images/game.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Use of Jupyter notebooks on ArcGIS pro to display flood results</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2022-10-27-use-of-jupyter-notebooks-on-arcgis-pro-to-display-flood-results</link>
+      <description>Yet another post about how to optimise the workflow of plotting hydraulic results using GIS software. This time I will use the Jupyter notebook function inside of ArcGIS.</description>
+      <guid>https://blog.rmrubert.eu/posts/2022-10-27-use-of-jupyter-notebooks-on-arcgis-pro-to-display-flood-results</guid>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2022-10-27-use-of-jupyter-notebooks-on-arcgis-pro-to-display-flood-results/images/04.png" medium="image" type="image/png" width="1920" height="1040"/>
+    </item>
+    <item>
+      <title>A script to automatize the plot of several rasters in the same Q-GIS layout</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2022-06-18-a-script-to-automatize-the-plot-of-several-raster-in-the-same-q-gis-layout</link>
+      <description>I present MultiLayout. A still (little bit) clunky Q-GIS workspace and a python script that would help you at plotting the results of hydraulic simulations.</description>
+      <guid>https://blog.rmrubert.eu/posts/2022-06-18-a-script-to-automatize-the-plot-of-several-raster-in-the-same-q-gis-layout</guid>
+      <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2022-06-18-a-script-to-automatize-the-plot-of-several-raster-in-the-same-q-gis-layout/images/Picture_1.png" medium="image" type="image/png" width="1442" height="1020"/>
+    </item>
+    <item>
+      <title>An analysis of the effects of panel markers on a cross-section's conveyance curve</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2021-12-24-an-analysis-of-the-effects-of-panel-markers-on-a-cross-sections-conveyance-curve</link>
+      <description>In this article, I present the effects of panelling a 1D cross-section. Panelling is the terminology used by the software Flood Modeller™ to divide the cross-section's hydraulic properties (mostly the hydraulic radius) into a sum of them. The article contains a theory introduction about Manning's n formula and 5 cross-sections are analysed with different panelling scenarios.</description>
+      <guid>https://blog.rmrubert.eu/posts/2021-12-24-an-analysis-of-the-effects-of-panel-markers-on-a-cross-sections-conveyance-curve</guid>
+      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2021-12-24-an-analysis-of-the-effects-of-panel-markers-on-a-cross-sections-conveyance-curve/images/preview.png" medium="image" type="image/png" width="799" height="567"/>
+    </item>
+    <item>
+      <title>Linear and bilinear interpolation in Excel</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel</link>
+      <description>An excel template to search in a table of values for certain item, and if it doesn't exist, then performs a linear intepolation between the 2 closest values.</description>
+      <guid>https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel</guid>
+      <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/images/Excel_Inter_01.png" medium="image" type="image/png" width="1052" height="848"/>
+    </item>
+    <item>
+      <title>Tic Tac Toe in Fortran90</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90</link>
+      <description>In this post, I analyse the first comprehensive program I have ever created: A Tic-Tac-Toe game designed in Fortran90 to play against the computer! And the challenges that I had to face to make it work.</description>
+      <guid>https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90</guid>
+      <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/images/TTT-01.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>How to classify your music collection by genre. The Ricardo approach.</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api</link>
+      <description>I have tried to classify my music library by Genre. After several trials and errors with different software, I surrendered and went manual. You will read the problem I encountered, my initial approach and how I used R and last.fm API to help me circumscribing the multiple options.</description>
+      <guid>https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api</guid>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/images/2021-06-12_Image1.png" medium="image" type="image/png" width="1165" height="772"/>
+    </item>
+    <item>
+      <title>Games in Excel/VBA 2048 and minesweeper</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2020-09-22-games-in-excelvba-2048-and-minesweeper</link>
+      <description>I made the game 2048 and Mine-Sweeper in Excel/VBA to self-teach Excel coding. The code is not optimal but they do work!</description>
+      <guid>https://blog.rmrubert.eu/posts/2020-09-22-games-in-excelvba-2048-and-minesweeper</guid>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2020-09-22-games-in-excelvba-2048-and-minesweeper/images/2020-09-22_Image0.png" medium="image" type="image/png" width="707" height="537"/>
+    </item>
+    <item>
+      <title>UK map</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2020-07-03-uk-map</link>
+      <description>Just a drawing of the Great Britain island in the style of Tolkyen.</description>
+      <guid>https://blog.rmrubert.eu/posts/2020-07-03-uk-map</guid>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2020-07-03-uk-map/images/map-GB.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Notepad++ theme (Solarized Dark) version for tuflow, FM and markdown files.</title>
+      <dc:creator>Ricardo Montero Rubert</dc:creator>
+      <link>https://blog.rmrubert.eu/posts/2020-06-30-notepad-theme-solarized-dark-version-for-tuflow-fm-and-markdown-files</link>
+      <description>User-defined files for Notepad++ that colourise Tuflow configuration files (tcf, tgc, tbc, tmf, ecf, tlf...), Flood Modeller simulation files (ief) and markdown (md) files with the Solarized Dark colour scheme.</description>
+      <guid>https://blog.rmrubert.eu/posts/2020-06-30-notepad-theme-solarized-dark-version-for-tuflow-fm-and-markdown-files</guid>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://blog.rmrubert.eu/posts/2020-06-30-notepad-theme-solarized-dark-version-for-tuflow-fm-and-markdown-files/images/Notepad_Solarized.png" medium="image" type="image/png" width="935" height="771"/>
+    </item>
+  </channel>
+</rss>
