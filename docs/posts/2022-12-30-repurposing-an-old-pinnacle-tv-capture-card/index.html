@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -125,7 +125,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/Avermedia_bt848-878_mejor.zip","data/BT848CCD_peor.zip","data/DScaler423.exe","data/DScaler423a.7z","data/DScaler423a_Src.7z","data/DScaler423Src.zip","data/Emp (5.2009.0416.0) Win7-Beta.zip","data/ITVC-1 _SuperTVPro_SAA7134.zip","data/PCTV 100i 110i 300i 310i.zip","data/PCTV_E.PDF","images/20221230_153031.jpg","images/20221230_153058.jpg","images/game.jpg","images/pinnacle_bt848_card.pdn","images/pinnacle_bt848_card.png","images/setup.png","repurposing-an-old-pinnacle-tv-capture-card_files/anchor-4.2.2/anchor.min.js","repurposing-an-old-pinnacle-tv-capture-card_files/bowser-1.9.3/bowser.min.js","repurposing-an-old-pinnacle-tv-capture-card_files/distill-2.2.21/template.v2.js","repurposing-an-old-pinnacle-tv-capture-card_files/header-attrs-2.19/header-attrs.js","repurposing-an-old-pinnacle-tv-capture-card_files/jquery-3.6.0/jquery-3.6.0.js","repurposing-an-old-pinnacle-tv-capture-card_files/jquery-3.6.0/jquery-3.6.0.min.js","repurposing-an-old-pinnacle-tv-capture-card_files/jquery-3.6.0/jquery-3.6.0.min.map","repurposing-an-old-pinnacle-tv-capture-card_files/popper-2.6.0/popper.min.js","repurposing-an-old-pinnacle-tv-capture-card_files/tippy-6.2.7/tippy-bundle.umd.min.js","repurposing-an-old-pinnacle-tv-capture-card_files/tippy-6.2.7/tippy-light-border.css","repurposing-an-old-pinnacle-tv-capture-card_files/tippy-6.2.7/tippy.css","repurposing-an-old-pinnacle-tv-capture-card_files/tippy-6.2.7/tippy.umd.min.js","repurposing-an-old-pinnacle-tv-capture-card_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/Avermedia_bt848-878_mejor.zip","data/BT848CCD_peor.zip","data/DScaler423.exe","data/DScaler423a.7z","data/DScaler423a_Src.7z","data/DScaler423Src.zip","data/Emp (5.2009.0416.0) Win7-Beta.zip","data/ITVC-1 _SuperTVPro_SAA7134.zip","data/PCTV 100i 110i 300i 310i.zip","data/PCTV_E.PDF","images/20221230_153031.jpg","images/20221230_153058.jpg","images/game.jpg","images/pinnacle_bt848_card.pdn","images/pinnacle_bt848_card.png","images/setup.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2516,7 +2516,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.22/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.27/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2572,6 +2572,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 <div class="d-title">
 <h1>Repurposing an old Pinnacle TV capture card</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 <p><p>As an analogue video-capturing device. In this post, I explain how to make an old tv Pinnacle capture card (chipset Bt848) work in a modern Windows 10 x64 pro. Using a modded version of DScaler, we can use either the composite or S-video entrance to capture analogue video signals such as the PSone.</p></p>
@@ -2596,7 +2597,7 @@ Figure 1: Pinnacle miroVideo PCTV pro with bt848 decoder chip
 </div>
 <p>As I have been recently fiddling around with my old PSone which outputs everything via RGB. Would I be able to make it work, so that I can record myself playing the PSone? I started looking around and I found that it is fairly easy to make them work if you are <a href="https://scanlines.xyz/t/old-pinnacle-systems-capture-card/732/4" target="_blank">using Linux</a>. But I am using Windows 10 x64, and this card was made more than 18 years ago, with Windows XP 32-bit drivers.</p>
 <p>Below this paragraph, you will find a (Spanish) video showing how the PSone image is being transferred into my computer and the instructions on how to achieve it. Additionally, I have added several other drivers that I found whilst I was testing my setup. Those drivers did not work for me on my computer, but they might work on yours.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ry1Ft-ajq1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ry1Ft-ajq1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h1 id="my-solution">My solution</h1>
 <p>You need:</p>
 <ul>

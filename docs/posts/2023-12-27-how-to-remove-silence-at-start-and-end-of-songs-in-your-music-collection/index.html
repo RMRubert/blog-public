@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -125,7 +125,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/trimming.ps1","images/audacity_720px.jpg","images/ffmpeg_720px.jpg","images/miniatura.jpg","images/mp3splt_720px.jpg","images/mptrim.jpg","images/radio_720px.jpg","removing-silence-from-songs-using-ffmpeg_files/anchor-4.2.2/anchor.min.js","removing-silence-from-songs-using-ffmpeg_files/bowser-1.9.3/bowser.min.js","removing-silence-from-songs-using-ffmpeg_files/distill-2.2.21/template.v2.js","removing-silence-from-songs-using-ffmpeg_files/header-attrs-2.25/header-attrs.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.min.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.min.map","removing-silence-from-songs-using-ffmpeg_files/popper-2.6.0/popper.min.js","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy-bundle.umd.min.js","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy-light-border.css","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy.css","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy.umd.min.js","removing-silence-from-songs-using-ffmpeg_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/trimming.ps1","images/audacity_720px.jpg","images/ffmpeg_720px.jpg","images/miniatura.jpg","images/mp3splt_720px.jpg","images/mptrim.jpg","images/radio_720px.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2516,7 +2516,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.25/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.27/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2614,7 +2614,7 @@ Figure 2: Audacity
 </p>
 </div>
 </div>
-<p><a href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" title="FFmpeg site to install in Windows">FFmpeg</a> is a great tool but you need to be an expert to control it properly, which I am not, for instance <a href="https://ffmpeg.org/ffmpeg-filters.html#silenceremove" target="_blank" title="FFmpeg silenceremove">here</a> is the page for the silence removal command. I tried to work out a command that would delete a silence if and only if the silence started at time 0 or the silence finished at time “song’s end”. But I failed, <a href="data/trimming.ps1" class="r-save-link" target="_blank">here</a> is the Powershell + FFmpeg script that as it is, will delete any silence that encounters in a song regardless of its position.</p>
+<p><a href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" title="FFmpeg site to install in Windows">FFmpeg</a> is a great tool, it can do pretty much anything as long as you have got the right command and as long as you know how to use it. For this purpose, I was using the silenceremove command, whose reference page is <a href="https://ffmpeg.org/ffmpeg-filters.html#silenceremove" target="_blank" title="FFmpeg silenceremove">here</a>. But I am no FFmpeg wizard and my script which should only delete silence either at the very start and at the very end of the song, leaving in-between silence untouched. In reality, it gets rid of any single silence that encounters. The script is written in Powershell and if you feel brave enough to edit you can <a href="data/trimming.ps1" class="r-save-link" target="_blank">download it here</a>. I didn’t and gave up after several attempts and looked for other software.</p>
 <ul>
 <li><p>FFmpeg’s main caveat is that it deals with one and only one file at a time. So you need to use another language (in my case Powershell) to control everything else.</p></li>
 <li><p>FFmpeg is destructive, it will uncompress and recompress, but unless Audacity, you can configure the bit-rate of the output.</p></li>
@@ -2664,15 +2664,15 @@ Figure 5: Mp3splt-gtk
 </p>
 </div>
 </div>
-<p><a href="https://mp3splt.sourceforge.net/mp3splt_page/home.php" target="_blank">Mp3splt</a> is a great tool to deal with silences. It has not been updated since 2014, so do not expect any new features. The software is focused on splitting recordings of a whole CD/Vinyl/Cassette, into different files. However, also is able to deal with silences only at the start and end of a song.</p>
+<p><a href="https://mp3splt.sourceforge.net/mp3splt_page/home.php" target="_blank">Mp3splt</a> is a great tool to deal with silences. It has not been updated since 2014, so do not expect any new features. The software is focused on splitting recordings of a whole CD/Vinyl/Cassette, into different files. However, also is able to deal with silences only at the start and end of a song, whilst ignoring any silence in-between.</p>
 <ul>
 <li><p>It uses a not destructive<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> method.</p></li>
 <li><p>It trims the song perfectly.</p></li>
-<li><p>You need some configuration tweaking that is not very straightforward if you want to keep the original ID tags, and mimic folder structure.</p></li>
+<li><p>You need some configuration tweaking that is not very straightforward if you want to keep the original ID tags, and mimic input folder structure.</p></li>
 </ul>
 <h3 id="how-to-use-the-software">How to use the software</h3>
 <p>Go to the <a href="https://mp3splt.sourceforge.net/mp3splt_page/home.php" target="_blank">Mp3splt</a> website and make sure you donwload the mp3splt-gtk 0.9.2 version. Uncompress the zip and then locate the <strong>mp3splt-gtk.exe</strong> and run it. You need to use the second tab, the one called “<strong>Batch &amp; Automatic split</strong>”, the first one is kind of useless for our purpose as it is to remove silence manually one by one.</p>
-<p>From the options below, make sure to select the one that says <strong>Trim using silence detection</strong>, and set up the threshold level you want (Anything between -50dB and -42dB is fine). The program has some questionable default values, but if you click on the <strong>Batch split</strong> button on the top right corner it should kind of work.</p>
+<p>From the options below, make sure to select the one that says <strong>Trim using silence detection</strong>, and set up the threshold level you want (Anything between -50dB and -42dB is fine). The program has some questionable default values<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, but if you click on the <strong>Batch split</strong> button on the top right corner it should kind of work.</p>
 <p>Lets gonna configure the application to keep the original ID tags and replicate the folder structure. Go to Application &gt; Preferences.</p>
 <ul>
 <li><p>Split tab:</p>
@@ -2704,6 +2704,7 @@ Figure 5: Mp3splt-gtk
 <li id="fn2"><p>I could have dealt with the other problems, but this one was the real deal-breaker.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>I do not support any subscription business. So game over.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>I tried to test this by inverting one of the trimmed songs, aligning it, and then combining the tracks. If they carbon-copies the results should be silent, but it wasn’t. However, I did not spend much time aligning as it is a tedious task.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>I guess they make sense for the original purpose of the software, split a vinyl recording into several files, but not for our purpose.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->
