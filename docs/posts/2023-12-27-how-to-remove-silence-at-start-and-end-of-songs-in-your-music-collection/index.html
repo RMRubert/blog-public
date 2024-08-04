@@ -125,7 +125,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/trimming.ps1","images/audacity_720px.jpg","images/ffmpeg_720px.jpg","images/miniatura.jpg","images/mp3splt_720px.jpg","images/mptrim.jpg","images/radio_720px.jpg"]}
+  {"type":"character","attributes":{},"value":["data/trimming.ps1","images/audacity_720px.jpg","images/ffmpeg_720px.jpg","images/miniatura.jpg","images/mp3splt_720px.jpg","images/mptrim.jpg","images/radio_720px.jpg","removing-silence-from-songs-using-ffmpeg_files/anchor-4.2.2/anchor.min.js","removing-silence-from-songs-using-ffmpeg_files/bowser-1.9.3/bowser.min.js","removing-silence-from-songs-using-ffmpeg_files/distill-2.2.21/template.v2.js","removing-silence-from-songs-using-ffmpeg_files/header-attrs-2.27/header-attrs.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.min.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.min.map","removing-silence-from-songs-using-ffmpeg_files/popper-2.6.0/popper.min.js","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy-bundle.umd.min.js","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy-light-border.css","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy.css","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy.umd.min.js","removing-silence-from-songs-using-ffmpeg_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2597,12 +2597,8 @@ Figure 1: The guilty one
 </div>
 </div>
 <p>The radio is fully functional now, and it does exactly what I wanted. Mimic a radio. I will try to be brief because this post is not about the radio. But basically, I have several playlists that are “radio stations”. That playlist should reproduce a song at a precise moment based on the system’s internal clock. That is at 12:00:00 you might be hearing Bon Jovi - Bed of Roses at time 45 seconds, and if you return to the station at 12:01:10 then you will be listening to the same song but this time in the 115-second position. When a song ends, it just skips to the next one.</p>
-<p>You can probably see where this is going. If a song has an ending silence of up to 25 seconds, and the next song has a silence at the start of 5 seconds. This appears as 30 seconds of silence which is extremely awkward or you could tune in right in the silence and think it broke. The easiest solution is to trim these silences. If you are curious, herein-below there is a video of the radio working.</p>
-<div style="padding-bottom: 56.25%; position: relative;">
-<iframe width="100%" height="100%" src="https://odysee.com/$/embed/radio33_video01/dcb57b23911dcb87c5c236d5d42386beaea66a4b?t=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-<p><small>Powered by <a href="https://embed.tube/embed-code-generator/odysee/">odysee embed</a> generator</small></p>
-</iframe>
-</div>
+<p>You can probably see where this is going. If a song has an ending silence of up to 25 seconds, and the next song has a silence at the start of 5 seconds. This appears as 30 seconds of silence which is extremely awkward or you could tune in right in the silence and think it broke. The easiest solution is to trim these silences. If you are curious, herein-below there is a <a href="https://odysee.com/@RMRubert:f/radio33_video01:d" title="Watch in Odysee, in case the embed stopped working.">video</a> of the radio working.</p>
+<video width="100%" height="100%" controls src="https://player.odycdn.com/v6/streams/dcb57b23911dcb87c5c236d5d42386beaea66a4b/54715d.mp4#t=1"></video>
 <h1 id="software-tried-for-this-solution">Software tried for this solution</h1>
 <p>Initially, this post was going to be about FFmpeg and how I used it for this purpose, but I couldn’t work out the specific command to remove a silence only if starts at time 0, and only if it finishes at time “song’s end”. So I had to keep investigating, I investigated Audacity, MPsplit and mp3splt-gtk before deciding to proceed with the latest one.</p>
 <h2 id="ffmpeg">FFmpeg</h2>
