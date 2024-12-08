@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -97,16 +98,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2021-06-12"/>
 <meta property="article:created" itemprop="dateCreated" content="2021-06-12"/>
-<meta name="article:author" content="Ricardo Montero Rubert"/>
+<meta name="article:author" content="Ricardo M. Rubert"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="RMRubert&#39;s blog: How to classify your music collection by genre. The Ricardo approach."/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="I have tried to classify my music library by Genre. After several trials and errors with different software, I surrendered and went manual. You will read the problem I encountered, my initial approach and how I used R and last.fm API to help me circumscribing the multiple options."/>
 <meta property="og:url" content="https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/"/>
-<meta property="og:image" content="https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/images/2021-06-12_Image1.png"/>
-<meta property="og:image:width" content="1165"/>
-<meta property="og:image:height" content="772"/>
+<meta property="og:image" content="https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/images/thumbnail.png"/>
+<meta property="og:image:width" content="321"/>
+<meta property="og:image:height" content="321"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="RMRubert&#39;s blog"/>
 
@@ -115,20 +116,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:title" content="RMRubert&#39;s blog: How to classify your music collection by genre. The Ricardo approach."/>
 <meta property="twitter:description" content="I have tried to classify my music library by Genre. After several trials and errors with different software, I surrendered and went manual. You will read the problem I encountered, my initial approach and how I used R and last.fm API to help me circumscribing the multiple options."/>
 <meta property="twitter:url" content="https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/"/>
-<meta property="twitter:image" content="https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/images/2021-06-12_Image1.png"/>
-<meta property="twitter:image:width" content="1165"/>
-<meta property="twitter:image:height" content="772"/>
+<meta property="twitter:image" content="https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/images/thumbnail.png"/>
+<meta property="twitter:image:width" content="321"/>
+<meta property="twitter:image:height" content="321"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","draft","citation","editor_options","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["How to classify your music collection by genre. The Ricardo approach."]},{"type":"character","attributes":{},"value":["I have tried to classify my music library by Genre. After several trials and errors with different software, I surrendered and went manual. You will read the problem I encountered, my initial approach and how I used R and last.fm API to help me circumscribing the multiple options."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["first_name","last_name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ricardo"]},{"type":"character","attributes":{},"value":["Montero Rubert"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/about"]}]}]},{"type":"character","attributes":{},"value":["06-12-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["images/2021-06-12_Image1.png"]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"character","attributes":{},"value":["sentence"]}]}]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","draft","citation","editor_options","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["How to classify your music collection by genre. The Ricardo approach."]},{"type":"character","attributes":{},"value":["I have tried to classify my music library by Genre. After several trials and errors with different software, I surrendered and went manual. You will read the problem I encountered, my initial approach and how I used R and last.fm API to help me circumscribing the multiple options."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["first_name","last_name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ricardo"]},{"type":"character","attributes":{},"value":["M. Rubert"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/about"]}]}]},{"type":"character","attributes":{},"value":["06-12-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["images/thumbnail.png"]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"character","attributes":{},"value":["sentence"]}]}]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/anchor-4.2.2/anchor.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/bowser-1.9.3/bowser.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/distill-2.2.21/template.v2.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/figure-html5/unnamed-chunk-2-1.png","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/header-attrs-2.11/header-attrs.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/jquery-3.6.0/jquery-3.6.0.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/jquery-3.6.0/jquery-3.6.0.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/jquery-3.6.0/jquery-3.6.0.min.map","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/popper-2.6.0/popper.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/tippy-6.2.7/tippy-bundle.umd.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/tippy-6.2.7/tippy-light-border.css","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/tippy-6.2.7/tippy.css","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/tippy-6.2.7/tippy.umd.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/webcomponents-2.0.0/webcomponents.js","data/Table.csv","data/tracklist.csv","images/2021-06-12_Image1.png","images/2021-06-12_Image2.png","images/2021-06-12_Image3.jpeg","images/2021-06-12_Image4.png","images/2021-06-12_Image5.png","images/2021-06-12_Image6.png","images/2021-06-12_Image7.png"]}
+  {"type":"character","attributes":{},"value":["classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/anchor-4.2.2/anchor.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/bowser-1.9.3/bowser.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/distill-2.2.21/template.v2.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/figure-html5/unnamed-chunk-2-1.png","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/header-attrs-2.11/header-attrs.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/jquery-3.6.0/jquery-3.6.0.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/jquery-3.6.0/jquery-3.6.0.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/jquery-3.6.0/jquery-3.6.0.min.map","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/popper-2.6.0/popper.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/tippy-6.2.7/tippy-bundle.umd.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/tippy-6.2.7/tippy-light-border.css","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/tippy-6.2.7/tippy.css","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/tippy-6.2.7/tippy.umd.min.js","classifying-your-music-library-by-genre-using-r-and-lastfm-api_files/webcomponents-2.0.0/webcomponents.js","data/Table.csv","data/tracklist.csv","images/2021-06-12_Image1.png","images/2021-06-12_Image2.png","images/2021-06-12_Image3.jpeg","images/2021-06-12_Image4.png","images/2021-06-12_Image5.png","images/2021-06-12_Image6.png","images/2021-06-12_Image7.png","images/thumbnail.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -475,8 +476,8 @@ d-title {
 </style>
 
 <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../../site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
-<link href="../../site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
 <script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
 <script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -2519,7 +2520,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.29/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2533,7 +2534,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <script data-goatcounter="https://analytics.rmrubert.eu/count"
         async src="//gc.zgo.at/count.js"></script>
 
-<a rel="me" href="https://im-in.space/@rmrubert">Mastodon</a>
+<a rel="me" href="https://im-in.space/@rmrubert"> </a>
 <!--/radix_placeholder_site_in_header-->
 
 
@@ -2544,7 +2545,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"How to classify your music collection by genre. The Ricardo approach.","description":"I have tried to classify my music library by Genre. After several trials and errors with different software, I surrendered and went manual. You will read the problem I encountered, my initial approach and how I used R and last.fm API to help me circumscribing the multiple options.","authors":[{"author":"Ricardo Montero Rubert","authorURL":"https://blog.rmrubert.eu/about","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-06-12T00:00:00.000+01:00","citationText":"Montero Rubert, 2021"}
+{"title":"How to classify your music collection by genre. The Ricardo approach.","description":"I have tried to classify my music library by Genre. After several trials and errors with different software, I surrendered and went manual. You will read the problem I encountered, my initial approach and how I used R and last.fm API to help me circumscribing the multiple options.","authors":[{"author":"Ricardo M. Rubert","authorURL":"https://blog.rmrubert.eu/about","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-06-12T00:00:00.000+02:00","citationText":"M. Rubert, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2575,6 +2576,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 <div class="d-title">
 <h1>How to classify your music collection by genre. The Ricardo approach.</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 <p><p>I have tried to classify my music library by Genre. After several trials and errors with different software, I surrendered and went manual. You will read the problem I encountered, my initial approach and how I used R and last.fm API to help me circumscribing the multiple options.</p></p>
@@ -2592,10 +2594,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#why-classifying-by-genre-is-complicated.">Why classifying by Genre is complicated.</a></li>
-<li><a href="#software-to-auto-sort-by-genre">Software to auto-sort by Genre</a></li>
-<li><a href="#getting-philosophical-about-music-classification">Getting philosophical about music classification</a></li>
-<li><a href="#less-philosophy-and-more-coding">Less philosophy and more coding!</a></li>
+<li><a href="#why-classifying-by-genre-is-complicated." id="toc-why-classifying-by-genre-is-complicated.">Why classifying by Genre is complicated.</a></li>
+<li><a href="#software-to-auto-sort-by-genre" id="toc-software-to-auto-sort-by-genre">Software to auto-sort by Genre</a></li>
+<li><a href="#getting-philosophical-about-music-classification" id="toc-getting-philosophical-about-music-classification">Getting philosophical about music classification</a></li>
+<li><a href="#less-philosophy-and-more-coding" id="toc-less-philosophy-and-more-coding">Less philosophy and more coding!</a></li>
 </ul>
 </nav>
 </div>
@@ -2607,15 +2609,21 @@ Figure 1: Musicbee after the Genre classification
 </p>
 </div>
 </div>
-<p>This post is about how did I organise my music library by genre. I have not done it for the sake of organisation (well, maybe a little), but because it is part of a bigger project. This (bigger) project is to have an old radio reconverted with a Raspberry PI in such a way that turning the dial will let the user choose different radio stations. Each radio station will play a set of songs, and it will be defined by a combination of genre and decade.</p>
+<p>This post is about how did I organise my music library by genre.
+I have not done it for the sake of organisation (well, maybe a little), but because it is part of a bigger project.
+This (bigger) project is to have an old radio reconverted with a Raspberry PI in such a way that turning the dial will let the user choose different radio stations.
+Each radio station will play a set of songs, and it will be defined by a combination of genre and decade.</p>
 <p>Because the organisation serves a purpose to the project, the classification had to be done with a set of rules (aka <strong>The Radio Rules!</strong>):</p>
 <ol type="1">
 <li>Few genres. Between 15 and 25.</li>
 <li>Each genre should have a decent pool of songs. I do not want a radio playing 6 songs time after time, I already have KISS FM Spain for that.</li>
 <li>Each song must be categorised using only one genre.</li>
 </ol>
-<p>Easy! Well, this task has consumed most of my free time since September 2020, and it isn’t over yet!</p>
-<p>But Ricardo, shall I have any learning expectations from this post? Well, mostly no. This is a small resume of what you will find in the post:</p>
+<p>Easy!
+Well, this task has consumed most of my free time since September 2020, and it isn’t over yet!</p>
+<p>But Ricardo, shall I have any learning expectations from this post?
+Well, mostly no.
+This is a small resume of what you will find in the post:</p>
 <ol type="1">
 <li>An explanation on why classifying by genre is pointless and most people have already given up.</li>
 <li>The currently existing software to automatise this task.</li>
@@ -2632,12 +2640,46 @@ Figure 2: Library Statistic
 </p>
 </div>
 </div>
-<p>When I started this task I used my favourite search engine to see how can it be done. I ended up in some music forums and a lot of answers were that people gave up on classifying by genre. Why? Because genres are subjective. If I ask you who is the original artist of “Girls just wanna have fun”, there is only one right answer: <a href="https://www.last.fm/music/Robert+Hazard/_/Girls+Just+Wanna+Have+Fun" target="_blank">Robert Hazard.</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> You don’t get a simple answer when doing the same question about the genre. If you are a fan of Electronic music you might want to tag all the different styles (House, Ambient, Disco, Dub, Electro Swing…) whilst for another person (me!) all those styles might go under the tag EDM (In my case, the EDM tag is to group modern electronica like Techno, House, etc., and differentiate them from classic electronic music like Tubular Bells or Michael Jean Jarre).</p>
-<p>Another problem is the gradualness of genres. Musicians have an inherent problem with making music that can be categorised into a nice simple genre. Those little bastards will try to have their own “style” and do you know how they do that? Yes, exactly, they got two genres and mix them (and not even 50%/50%). If a band now combines punk with metal. Is it punk? Is it metal? Is it a bird? Is it a plane? Is it a birdplane? This could not be a problem, but it collides with the set rule of only one genre per song.</p>
-<p>This leads to the following quandary, uniqueness. Some artists have managed to create a genre so specific that no other band in the world plays. This occurs more often than I would like it<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Do I really want to classify Cartoons in the <a href="https://www.last.fm/tag/technobilly" target="_blank">technobilly</a> tag? No, I don’t, why anybody would like that? Plus it collides with each genre should have a decent pool of songs rule. A decision was taken, if some musician managed to invent a genre so specific that couldn’t be assigned to a broader genre(a.k.a. piss me off), then, their songs will be exiled into the wretched genre of “other”, and more likely they won’t be played again!</p>
-<p>Resuming, classifying genres ain’t easy because of subjectivity, gradualness and uniqueness. So how did I solve this? Come up with a predefined list of genres. The list must have enough genres to successfully divide the music collection into sensible categories and adapt to my own criteria and library.</p>
-<p>So the first step to start is, <strong>you need to come up with a list of genres</strong>. My starting point was the <a href="https://en.wikipedia.org/wiki/List_of_ID3v1_Genres" target="_blank">ID3v1 list of genres</a>. The list contains a nice 80 tags to start with. Remove some tags (Top 40, Gospel) and add some other tags (EDM). Whatever list you come with here, you will change it later. This process is mostly iterative.</p>
-<p>You don’t know how many songs will you have in a genre until you start. This translates into ending up with some genres with very few songs, and others including one-third of the music collection. In my case: <strong>New Age</strong>, <strong>Psychedelic</strong>, and <strong>Vocal</strong> contain less than 20 songs combined. Whilst, <strong>Classic Rock</strong> has 710 songs, and the almighty <strong>Pop</strong> has 1015 songs. Classic Rock and Pop are 43% of my library.</p>
+<p>When I started this task I used my favourite search engine to see how can it be done.
+I ended up in some music forums and a lot of answers were that people gave up on classifying by genre.
+Why?
+Because genres are subjective.
+If I ask you who is the original artist of “Girls just wanna have fun”, there is only one right answer: <a href="https://www.last.fm/music/Robert+Hazard/_/Girls+Just+Wanna+Have+Fun" target="_blank">Robert Hazard.</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+You don’t get a simple answer when doing the same question about the genre.
+If you are a fan of Electronic music you might want to tag all the different styles (House, Ambient, Disco, Dub, Electro Swing…) whilst for another person (me!) all those styles might go under the tag EDM (In my case, the EDM tag is to group modern electronica like Techno, House, etc., and differentiate them from classic electronic music like Tubular Bells or Michael Jean Jarre).</p>
+<p>Another problem is the gradualness of genres.
+Musicians have an inherent problem with making music that can be categorised into a nice simple genre.
+Those little bastards will try to have their own “style” and do you know how they do that?
+Yes, exactly, they got two genres and mix them (and not even 50%/50%).
+If a band now combines punk with metal.
+Is it punk?
+Is it metal?
+Is it a bird?
+Is it a plane?
+Is it a birdplane?
+This could not be a problem, but it collides with the set rule of only one genre per song.</p>
+<p>This leads to the following quandary, uniqueness.
+Some artists have managed to create a genre so specific that no other band in the world plays.
+This occurs more often than I would like it<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.
+Do I really want to classify Cartoons in the <a href="https://www.last.fm/tag/technobilly" target="_blank">technobilly</a> tag?
+No, I don’t, why anybody would like that?
+Plus it collides with each genre should have a decent pool of songs rule.
+A decision was taken, if some musician managed to invent a genre so specific that couldn’t be assigned to a broader genre(a.k.a. piss me off), then, their songs will be exiled into the wretched genre of “other”, and more likely they won’t be played again!</p>
+<p>Resuming, classifying genres ain’t easy because of subjectivity, gradualness and uniqueness.
+So how did I solve this?
+Come up with a predefined list of genres.
+The list must have enough genres to successfully divide the music collection into sensible categories and adapt to my own criteria and library.</p>
+<p>So the first step to start is, <strong>you need to come up with a list of genres</strong>.
+My starting point was the <a href="https://en.wikipedia.org/wiki/List_of_ID3v1_Genres" target="_blank">ID3v1 list of genres</a>.
+The list contains a nice 80 tags to start with.
+Remove some tags (Top 40, Gospel) and add some other tags (EDM).
+Whatever list you come with here, you will change it later.
+This process is mostly iterative.</p>
+<p>You don’t know how many songs will you have in a genre until you start.
+This translates into ending up with some genres with very few songs, and others including one-third of the music collection.
+In my case: <strong>New Age</strong>, <strong>Psychedelic</strong>, and <strong>Vocal</strong> contain less than 20 songs combined.
+Whilst, <strong>Classic Rock</strong> has 710 songs, and the almighty <strong>Pop</strong> has 1015 songs.
+Classic Rock and Pop are 43% of my library.</p>
 <p>I am currently reiterating all the process and trying to divide <strong>Pop</strong> into other subgenres like <strong>New Wave</strong> (already done) or <strong>electropop</strong> (currently working on this).</p>
 <h2 id="software-to-auto-sort-by-genre">Software to auto-sort by Genre</h2>
 <div class="layout-chunk" data-layout="l-body">
@@ -2648,16 +2690,27 @@ Figure 3: Can’t someone else do it?
 </p>
 </div>
 </div>
-<p>But can’t someone else just do it? Technically yes, but it will be a subpar job. The subjectivity, graduality and uniqueness will come to and screw up with your plans of letting a tool work for you. But if you do not trust me you can go and test them by yourself. Do what I did, create a 50 songs sample (Trial periods are limited to a certain amount of songs) and check if you are happy with their results.</p>
-<p>I will recommend you to start with the free <a href="https://picard.musicbrainz.org/" target="_blank">Music Brainz Picard</a>. This software will scan your music collection, assign them a “magic music hash id”. And compare with their own community giant database collection to retrieve the information.</p>
-<p>But Ricardo, what if I think that you are a case of long pockets and short arms? What if one could spend some of their hard-earned sterling pounds and exchange them for goods and services. Services like finding a tool that just does it? Well, good news is that there are plenty of paid <a href="https://alternativeto.net/software/musicbrainz-picard/?p=2" target="_blank">alternatives</a>.</p>
-<p>Do not get me wrong, the tools work quite alright, almost like magic. But there are two problems:</p>
+<p>But can’t someone else just do it?
+Technically yes, but it will be a subpar job.
+The subjectivity, graduality and uniqueness will come to and screw up with your plans of letting a tool work for you.
+But if you do not trust me you can go and test them by yourself.
+Do what I did, create a 50 songs sample (Trial periods are limited to a certain amount of songs) and check if you are happy with their results.</p>
+<p>I will recommend you to start with the free <a href="https://picard.musicbrainz.org/" target="_blank">Music Brainz Picard</a>.
+This software will scan your music collection, assign them a “magic music hash id”.
+And compare with their own community giant database collection to retrieve the information.</p>
+<p>But Ricardo, what if I think that you are a case of long pockets and short arms?
+What if one could spend some of their hard-earned sterling pounds and exchange them for goods and services.
+Services like finding a tool that just does it?
+Well, good news is that there are plenty of paid <a href="https://alternativeto.net/software/musicbrainz-picard/?p=2" target="_blank">alternatives</a>.</p>
+<p>Do not get me wrong, the tools work quite alright, almost like magic.
+But there are two problems:</p>
 <ol type="1">
 <li>They cannot work unattended, and if I need to revise everything they suggest me to do, the process is as slow as doing it by myself.</li>
 <li>The way they work collides with my <em>three radio rules</em>.</li>
 </ol>
 <h2 id="getting-philosophical-about-music-classification">Getting philosophical about music classification</h2>
-<p>I decided to assign every artist to a genre (as opposed to classify each song). The only exception in my library is the artist Dover, they started making <a href="https://www.last.fm/music/Dover/_/Devil+Came+to+Me" target="_blank">rock</a> music and later on (with plenty of controverse) moved to <a href="https://www.last.fm/music/Dover/_/Let+Me+Out" target="_blank">electropop</a>.</p>
+<p>I decided to assign every artist to a genre (as opposed to classify each song).
+The only exception in my library is the artist Dover, they started making <a href="https://www.last.fm/music/Dover/_/Devil+Came+to+Me" target="_blank">rock</a> music and later on (with plenty of controverse) moved to <a href="https://www.last.fm/music/Dover/_/Let+Me+Out" target="_blank">electropop</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/2021-06-12_Image5.png" alt="Plato listening to some form songs" width="156" />
@@ -2666,18 +2719,37 @@ Figure 4: Plato listening to some form songs
 </p>
 </div>
 </div>
-<p>But then I started to get philosophical. How can I determine what is Rock from what it isn’t? Is it Aerosmith rocker than Dire Straits? But why make myself such a question when great thinkers have already discussed plenty of theories? So in a nod to Plato’s <a href="https://en.wikipedia.org/wiki/Theory_of_forms" target="_blank">theory of forms</a>, I decided to give to every genre a master song. The master song will act as an “Idea” or “Form” of the genre. Like it is the only true representation of that genre.</p>
+<p>But then I started to get philosophical.
+How can I determine what is Rock from what it isn’t?
+Is it Aerosmith rocker than Dire Straits?
+But why make myself such a question when great thinkers have already discussed plenty of theories?
+So in a nod to Plato’s <a href="https://en.wikipedia.org/wiki/Theory_of_forms" target="_blank">theory of forms</a>, I decided to give to every genre a master song.
+The master song will act as an “Idea” or “Form” of the genre.
+Like it is the only true representation of that genre.</p>
 <p>When I will have doubts about an artist being one or another genre, I will make myself the question, <em>if I was the Radio Station DJ of the genre, will I play it next to the master song?</em> If they couldn’t be played next to any master song, they would be exiled into the “other” tag.</p>
-<p>Are you curious to know my list of <a href="https://www.last.fm/user/Rhinocardo/playlists/12167117" target="_blank">“Form songs”</a>. There you have.</p>
+<p>Are you curious to know my list of <a href="https://www.last.fm/user/Rhinocardo/playlists/12167117" target="_blank">“Form songs”</a>.
+There you have.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="ksctlbovnq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="vlymbyyuav" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vlymbyyuav table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#ksctlbovnq .gt_table {
+#vlymbyyuav thead, #vlymbyyuav tbody, #vlymbyyuav tfoot, #vlymbyyuav tr, #vlymbyyuav td, #vlymbyyuav th {
+  border-style: none;
+}
+
+#vlymbyyuav p {
+  margin: 0;
+  padding: 0;
+}
+
+#vlymbyyuav .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -2700,7 +2772,36 @@ Figure 4: Plato listening to some form songs
   border-left-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_heading {
+#vlymbyyuav .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vlymbyyuav .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vlymbyyuav .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vlymbyyuav .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2712,33 +2813,13 @@ Figure 4: Plato listening to some form songs
   border-right-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#ksctlbovnq .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#ksctlbovnq .gt_bottom_border {
+#vlymbyyuav .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_col_headings {
+#vlymbyyuav .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2753,7 +2834,7 @@ Figure 4: Plato listening to some form songs
   border-right-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_col_heading {
+#vlymbyyuav .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2773,7 +2854,7 @@ Figure 4: Plato listening to some form songs
   overflow-x: hidden;
 }
 
-#ksctlbovnq .gt_column_spanner_outer {
+#vlymbyyuav .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2785,15 +2866,15 @@ Figure 4: Plato listening to some form songs
   padding-right: 4px;
 }
 
-#ksctlbovnq .gt_column_spanner_outer:first-child {
+#vlymbyyuav .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ksctlbovnq .gt_column_spanner_outer:last-child {
+#vlymbyyuav .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ksctlbovnq .gt_column_spanner {
+#vlymbyyuav .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2805,8 +2886,15 @@ Figure 4: Plato listening to some form songs
   width: 100%;
 }
 
-#ksctlbovnq .gt_group_heading {
-  padding: 8px;
+#vlymbyyuav .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vlymbyyuav .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2825,9 +2913,10 @@ Figure 4: Plato listening to some form songs
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
-#ksctlbovnq .gt_empty_group_heading {
+#vlymbyyuav .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2842,15 +2931,15 @@ Figure 4: Plato listening to some form songs
   vertical-align: middle;
 }
 
-#ksctlbovnq .gt_from_md > :first-child {
+#vlymbyyuav .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ksctlbovnq .gt_from_md > :last-child {
+#vlymbyyuav .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ksctlbovnq .gt_row {
+#vlymbyyuav .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2869,7 +2958,7 @@ Figure 4: Plato listening to some form songs
   overflow-x: hidden;
 }
 
-#ksctlbovnq .gt_stub {
+#vlymbyyuav .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2878,10 +2967,33 @@ Figure 4: Plato listening to some form songs
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
-  padding-left: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#ksctlbovnq .gt_summary_row {
+#vlymbyyuav .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vlymbyyuav .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vlymbyyuav .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vlymbyyuav .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2891,17 +3003,26 @@ Figure 4: Plato listening to some form songs
   padding-right: 5px;
 }
 
-#ksctlbovnq .gt_first_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
+#vlymbyyuav .gt_first_summary_row {
   border-top-style: solid;
-  border-top-width: 2px;
   border-top-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_grand_summary_row {
+#vlymbyyuav .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vlymbyyuav .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vlymbyyuav .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2911,7 +3032,7 @@ Figure 4: Plato listening to some form songs
   padding-right: 5px;
 }
 
-#ksctlbovnq .gt_first_grand_summary_row {
+#vlymbyyuav .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2921,11 +3042,21 @@ Figure 4: Plato listening to some form songs
   border-top-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_striped {
+#vlymbyyuav .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vlymbyyuav .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ksctlbovnq .gt_table_body {
+#vlymbyyuav .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2934,7 +3065,7 @@ Figure 4: Plato listening to some form songs
   border-bottom-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_footnotes {
+#vlymbyyuav .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2948,13 +3079,16 @@ Figure 4: Plato listening to some form songs
   border-right-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_footnote {
+#vlymbyyuav .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#ksctlbovnq .gt_sourcenotes {
+#vlymbyyuav .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2968,204 +3102,215 @@ Figure 4: Plato listening to some form songs
   border-right-color: #D3D3D3;
 }
 
-#ksctlbovnq .gt_sourcenote {
+#vlymbyyuav .gt_sourcenote {
   font-size: 90%;
-  padding: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#ksctlbovnq .gt_left {
+#vlymbyyuav .gt_left {
   text-align: left;
 }
 
-#ksctlbovnq .gt_center {
+#vlymbyyuav .gt_center {
   text-align: center;
 }
 
-#ksctlbovnq .gt_right {
+#vlymbyyuav .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ksctlbovnq .gt_font_normal {
+#vlymbyyuav .gt_font_normal {
   font-weight: normal;
 }
 
-#ksctlbovnq .gt_font_bold {
+#vlymbyyuav .gt_font_bold {
   font-weight: bold;
 }
 
-#ksctlbovnq .gt_font_italic {
+#vlymbyyuav .gt_font_italic {
   font-style: italic;
 }
 
-#ksctlbovnq .gt_super {
+#vlymbyyuav .gt_super {
   font-size: 65%;
 }
 
-#ksctlbovnq .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 65%;
+#vlymbyyuav .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vlymbyyuav .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vlymbyyuav .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vlymbyyuav .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vlymbyyuav .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vlymbyyuav .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vlymbyyuav .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#vlymbyyuav .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#vlymbyyuav div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
-<table class="gt_table">
-  <thead class="gt_header">
-    <tr>
-      <th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>The Great Form Songs List</th>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>The Great Form Songs List</td>
     </tr>
     
-  </thead>
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Genre</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">N. Songs</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Form Song</th>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Genre">Genre</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="N.-Songs">N. Songs</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Form-Song">Form Song</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">alternative rock</td>
-<td class="gt_row gt_right">393</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Muse/_/Resistance" target="_blank">Muse - Resistance</a></td></tr>
-    <tr><td class="gt_row gt_left">ambient</td>
-<td class="gt_row gt_right">19</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Mauro+Picotto/_/Adiemus" target="_blank">Mauro Picotto - Adiemus</a></td></tr>
-    <tr><td class="gt_row gt_left">blues</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=svitEEpI07E" target="_blank">Leonard Cohen - Suzanne</a></td></tr>
-    <tr><td class="gt_row gt_left">classic rock</td>
-<td class="gt_row gt_right">710</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Dire+Straits/_/Sultans+of+Swing" target="_blank">Dire Straits - Sultans of Swing</a></td></tr>
-    <tr><td class="gt_row gt_left">classical<sup class="gt_footnote_marks">1</sup></td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Ludovico+Einaudi/_/Nuvole+Bianche" target="_blank">Ludovico Einaudi - Nuvole Bianche</a></td></tr>
-    <tr><td class="gt_row gt_left">country</td>
-<td class="gt_row gt_right">36</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Toby+Keith/_/God+Love+Her" target="_blank">Toby Keith - God Love Her</a></td></tr>
-    <tr><td class="gt_row gt_left">disco</td>
-<td class="gt_row gt_right">67</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Earth,+Wind+&+Fire/_/Boogie+Wonderland" target="_blank">Earth, Wind & Fire - Boogie Wonderland</a></td></tr>
-    <tr><td class="gt_row gt_left">edm</td>
-<td class="gt_row gt_right">33</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Avicii/_/Hey+Brother" target="_blank">Avicii - Hey Brother</a></td></tr>
-    <tr><td class="gt_row gt_left">electronic</td>
-<td class="gt_row gt_right">84</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Jean+Michel+Jarre/_/Oxygene,+Pt.+4" target="_blank">Jean Michel Jarre - Oxygene, Pt 4</a></td></tr>
-    <tr><td class="gt_row gt_left">electropop<sup class="gt_footnote_marks">2</sup></td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Owl+City/_/Fireflies" target="_blank">Owl City - Fireflies</a></td></tr>
-    <tr><td class="gt_row gt_left">eurodance</td>
-<td class="gt_row gt_right">27</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Eiffel+65/_/Blue+(Da+Ba+Dee)" target="_blank">Eiffel 65 - Blue</a></td></tr>
-    <tr><td class="gt_row gt_left">folk</td>
-<td class="gt_row gt_right">28</td>
-<td class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=l0q7MLPo-u8" target="_blank">Simon & Garfunkel - The sound of silence</a></td></tr>
-    <tr><td class="gt_row gt_left">freak metal</td>
-<td class="gt_row gt_right">82</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/El+Reno+Renardo/_/El+Bogavante" target="_blank">El Reno Renardo - El Bogavante</a></td></tr>
-    <tr><td class="gt_row gt_left">gothic<sup class="gt_footnote_marks">1</sup></td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Evanescence/_/Lithium" target="_blank">Evanescence - Lithium</a></td></tr>
-    <tr><td class="gt_row gt_left">grunge</td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/The+Smashing+Pumpkins/_/Bullet+With+Butterfly+Wings+-+remastered+2012" target="_blank">The Smashing Pumpkins - Bullet With Butterfly Wings</a></td></tr>
-    <tr><td class="gt_row gt_left">hard rock</td>
-<td class="gt_row gt_right">107</td>
-<td class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=STJyN4RCLXs" target="_blank">Scorpions - She's Knocking At My Door</a></td></tr>
-    <tr><td class="gt_row gt_left">hip-hop<sup class="gt_footnote_marks">3</sup></td>
-<td class="gt_row gt_right">50</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Eminem/_/Lose+Yourself" target="_blank">Eminem - Lose Yourself</a></td></tr>
-    <tr><td class="gt_row gt_left">jazz</td>
-<td class="gt_row gt_right">61</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Louis+Armstrong/_/What+a+Wonderful+World" target="_blank">Louis Armstrong - What a Wonderful World</a></td></tr>
-    <tr><td class="gt_row gt_left">latin</td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=hFgXiBqGUHc" target="_blank">Miami Sound Machine - Conga</a></td></tr>
-    <tr><td class="gt_row gt_left">lo-fi<sup class="gt_footnote_marks">4</sup></td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Grizzly+Bear/_/Two+Weeks" target="_blank">Grizzly Bear - Two Weeks</a></td></tr>
-    <tr><td class="gt_row gt_left">metal</td>
-<td class="gt_row gt_right">36</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Stratovarius/_/4000+Rainy+Nights+(Remastered+2016)" target="_blank">Stratovarius - 4000 Rainy Nights</a></td></tr>
-    <tr><td class="gt_row gt_left">new age<sup class="gt_footnote_marks">4</sup></td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Sally+Oldfield/_/Mirrors" target="_blank">Sally Oldfield - Mirrors</a></td></tr>
-    <tr><td class="gt_row gt_left">new wave<sup class="gt_footnote_marks">2</sup></td>
-<td class="gt_row gt_right">234</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Alphaville/_/Forever+Young" target="_blank">Alphaville - Forever Young</a></td></tr>
-    <tr><td class="gt_row gt_left">oldies</td>
-<td class="gt_row gt_right">584</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/The+Foundations/_/Build+Me+up+Buttercup" target="_blank">The Foundations - Build Me Up Buttercup</a></td></tr>
-    <tr><td class="gt_row gt_left">other</td>
-<td class="gt_row gt_right">39</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/tag/other" target="_blank">Where exiled song come to die</a></td></tr>
-    <tr><td class="gt_row gt_left">pop</td>
-<td class="gt_row gt_right">1015</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Coldplay/_/The+Hardest+Part" target="_blank">Coldplay - The Hardest Part</a></td></tr>
-    <tr><td class="gt_row gt_left">psychedelic<sup class="gt_footnote_marks">4</sup></td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/%3F+and+the+Mysterians/_/96+Tears" target="_blank">? and The Mysterians - 96 Tears</a></td></tr>
-    <tr><td class="gt_row gt_left">punk</td>
-<td class="gt_row gt_right">92</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/The+Offspring/_/Pretty+Fly+(For+a+White+Guy)" target="_blank">The Offspring - Pretty Fly</a></td></tr>
-    <tr><td class="gt_row gt_left">reggae</td>
-<td class="gt_row gt_right">25</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Eddy+Grant/_/Gimme+Hope+Jo%27anna" target="_blank">Eddy Grant - Gimme Hope Jo'anna</a></td></tr>
-    <tr><td class="gt_row gt_left">rock</td>
-<td class="gt_row gt_right">104</td>
-<td class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=hfmxO-HQ5rU" target="_blank">Men at Work - Down Under</a></td></tr>
-    <tr><td class="gt_row gt_left">rockabilly</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/The+Baseballs/_/Umbrella" target="_blank">The Baseballs - Umbrella</a></td></tr>
-    <tr><td class="gt_row gt_left">ska<sup class="gt_footnote_marks">4</sup></td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Streetlight+Manifesto/_/A+Moment+Of+Silence" target="_blank">Streetlight Manifesto - A Moment of Silence</a></td></tr>
-    <tr><td class="gt_row gt_left">soul</td>
-<td class="gt_row gt_right">70</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/Roberta+Flack/_/Killing+Me+Softly+With+His+Song" target="_blank">Roberta Flack - Killing Me Softly with his song</a></td></tr>
-    <tr><td class="gt_row gt_left">soundtrack</td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_center"><a href="https://www.last.fm/music/John+Travolta/_/Greased+Lightnin%27" target="_blank">John Travolta - Greased Lightnin'</a></td></tr>
-    <tr><td class="gt_row gt_left">vocal<sup class="gt_footnote_marks">4</sup></td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=8K0EAc3abq8" target="_blank">The Blanks - Hey ya!</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">alternative rock</td>
+<td headers="N. Songs" class="gt_row gt_right">393</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Muse/_/Resistance" target="_blank">Muse - Resistance</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">ambient</td>
+<td headers="N. Songs" class="gt_row gt_right">19</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Mauro+Picotto/_/Adiemus" target="_blank">Mauro Picotto - Adiemus</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">blues</td>
+<td headers="N. Songs" class="gt_row gt_right">11</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=svitEEpI07E" target="_blank">Leonard Cohen - Suzanne</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">classic rock</td>
+<td headers="N. Songs" class="gt_row gt_right">710</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Dire+Straits/_/Sultans+of+Swing" target="_blank">Dire Straits - Sultans of Swing</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">classical<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">1</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Ludovico+Einaudi/_/Nuvole+Bianche" target="_blank">Ludovico Einaudi - Nuvole Bianche</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">country</td>
+<td headers="N. Songs" class="gt_row gt_right">36</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Toby+Keith/_/God+Love+Her" target="_blank">Toby Keith - God Love Her</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">disco</td>
+<td headers="N. Songs" class="gt_row gt_right">67</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Earth,+Wind+&+Fire/_/Boogie+Wonderland" target="_blank">Earth, Wind & Fire - Boogie Wonderland</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">edm</td>
+<td headers="N. Songs" class="gt_row gt_right">33</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Avicii/_/Hey+Brother" target="_blank">Avicii - Hey Brother</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">electronic</td>
+<td headers="N. Songs" class="gt_row gt_right">84</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Jean+Michel+Jarre/_/Oxygene,+Pt.+4" target="_blank">Jean Michel Jarre - Oxygene, Pt 4</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">electropop<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">8</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Owl+City/_/Fireflies" target="_blank">Owl City - Fireflies</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">eurodance</td>
+<td headers="N. Songs" class="gt_row gt_right">27</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Eiffel+65/_/Blue+(Da+Ba+Dee)" target="_blank">Eiffel 65 - Blue</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">folk</td>
+<td headers="N. Songs" class="gt_row gt_right">28</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=l0q7MLPo-u8" target="_blank">Simon & Garfunkel - The sound of silence</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">freak metal</td>
+<td headers="N. Songs" class="gt_row gt_right">82</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/El+Reno+Renardo/_/El+Bogavante" target="_blank">El Reno Renardo - El Bogavante</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">gothic<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">4</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Evanescence/_/Lithium" target="_blank">Evanescence - Lithium</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">grunge</td>
+<td headers="N. Songs" class="gt_row gt_right">18</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/The+Smashing+Pumpkins/_/Bullet+With+Butterfly+Wings+-+remastered+2012" target="_blank">The Smashing Pumpkins - Bullet With Butterfly Wings</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">hard rock</td>
+<td headers="N. Songs" class="gt_row gt_right">107</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=STJyN4RCLXs" target="_blank">Scorpions - She's Knocking At My Door</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">hip-hop<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">50</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Eminem/_/Lose+Yourself" target="_blank">Eminem - Lose Yourself</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">jazz</td>
+<td headers="N. Songs" class="gt_row gt_right">61</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Louis+Armstrong/_/What+a+Wonderful+World" target="_blank">Louis Armstrong - What a Wonderful World</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">latin</td>
+<td headers="N. Songs" class="gt_row gt_right">14</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=hFgXiBqGUHc" target="_blank">Miami Sound Machine - Conga</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">lo-fi<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">1</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Grizzly+Bear/_/Two+Weeks" target="_blank">Grizzly Bear - Two Weeks</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">metal</td>
+<td headers="N. Songs" class="gt_row gt_right">36</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Stratovarius/_/4000+Rainy+Nights+(Remastered+2016)" target="_blank">Stratovarius - 4000 Rainy Nights</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">new age<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">2</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Sally+Oldfield/_/Mirrors" target="_blank">Sally Oldfield - Mirrors</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">new wave<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">234</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Alphaville/_/Forever+Young" target="_blank">Alphaville - Forever Young</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">oldies</td>
+<td headers="N. Songs" class="gt_row gt_right">584</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/The+Foundations/_/Build+Me+up+Buttercup" target="_blank">The Foundations - Build Me Up Buttercup</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">other</td>
+<td headers="N. Songs" class="gt_row gt_right">39</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/tag/other" target="_blank">Where exiled song come to die</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">pop</td>
+<td headers="N. Songs" class="gt_row gt_right">1015</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Coldplay/_/The+Hardest+Part" target="_blank">Coldplay - The Hardest Part</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">psychedelic<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">2</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/%3F+and+the+Mysterians/_/96+Tears" target="_blank">? and The Mysterians - 96 Tears</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">punk</td>
+<td headers="N. Songs" class="gt_row gt_right">92</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/The+Offspring/_/Pretty+Fly+(For+a+White+Guy)" target="_blank">The Offspring - Pretty Fly</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">reggae</td>
+<td headers="N. Songs" class="gt_row gt_right">25</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Eddy+Grant/_/Gimme+Hope+Jo%27anna" target="_blank">Eddy Grant - Gimme Hope Jo'anna</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">rock</td>
+<td headers="N. Songs" class="gt_row gt_right">104</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=hfmxO-HQ5rU" target="_blank">Men at Work - Down Under</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">rockabilly</td>
+<td headers="N. Songs" class="gt_row gt_right">5</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/The+Baseballs/_/Umbrella" target="_blank">The Baseballs - Umbrella</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">ska<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">5</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Streetlight+Manifesto/_/A+Moment+Of+Silence" target="_blank">Streetlight Manifesto - A Moment of Silence</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">soul</td>
+<td headers="N. Songs" class="gt_row gt_right">70</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/Roberta+Flack/_/Killing+Me+Softly+With+His+Song" target="_blank">Roberta Flack - Killing Me Softly with his song</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">soundtrack</td>
+<td headers="N. Songs" class="gt_row gt_right">14</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.last.fm/music/John+Travolta/_/Greased+Lightnin%27" target="_blank">John Travolta - Greased Lightnin'</a></td></tr>
+    <tr><td headers="Genre" class="gt_row gt_left">vocal<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span></td>
+<td headers="N. Songs" class="gt_row gt_right">1</td>
+<td headers="Form Song" class="gt_row gt_center"><a href="https://www.youtube.com/watch?v=8K0EAc3abq8" target="_blank">The Blanks - Hey ya!</a></td></tr>
   </tbody>
   
-  <tfoot>
-    <tr class="gt_footnotes">
-      <td colspan="3">
-        <p class="gt_footnote">
-          <sup class="gt_footnote_marks">
-            <em>1</em>
-          </sup>
-           
-          There is another music collection that will eventually join this one and will enlarge this genre.
-          <br />
-        </p>
-        <p class="gt_footnote">
-          <sup class="gt_footnote_marks">
-            <em>2</em>
-          </sup>
-           
-          Created to reduce the size of Pop.
-          <br />
-        </p>
-        <p class="gt_footnote">
-          <sup class="gt_footnote_marks">
-            <em>3</em>
-          </sup>
-           
-          Hip-Hop already contains all songs previously marked as Rap
-          <br />
-        </p>
-        <p class="gt_footnote">
-          <sup class="gt_footnote_marks">
-            <em>4</em>
-          </sup>
-           
-          This genre will be removed due to having a small pool of songs.  
-          <br />
-        </p>
-      </td>
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> There is another music collection that will eventually join this one and will enlarge this genre.</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span> Created to reduce the size of Pop.</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span> Hip-Hop already contains all songs previously marked as Rap</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span> This genre will be removed due to having a small pool of songs.  </td>
     </tr>
   </tfoot>
 </table>
@@ -3181,9 +3326,17 @@ Figure 5: Time to code!
 </div>
 </div>
 <p>I have written this post to teach philosophy and code in R… and I’m all out of theories.</p>
-<p>We need to pass our music library info to R, so we need a CSV file with information about our library. <a href="https://www.xdlab.ru/en/" target="_blank">Tagscanner</a> is our man. Scan your library, and in the export tab, save it as an “Excel friendly” CSV file. Don’t forget to check the UTF-8 with DOM option. Mind that from this moment until you finish, you <strong>must not modify your library by adding, removing or editing any file here</strong>.</p>
-<p>Then we need a database to get information from. Get a <a href="https://www.last.fm/api" target="_blank">last.fm API</a> so we can access their database and load it into our R code. Sign in for an API request and get your API key, your API key is a hexadecimal number that should look similar to this one “0123456789abcdef0123456789abcdef”, and gives you permission to use their database.</p>
-<p>If you don’t have R and Rstudio ready on your computer, stop making bad decisions in your life and go download and install them. You will also need the urltools and jsonlite libraries. We will be creating some functions that will help us to retrieve information from last.fm database.</p>
+<p>We need to pass our music library info to R, so we need a CSV file with information about our library.
+<a href="https://www.xdlab.ru/en/" target="_blank">Tagscanner</a> is our man.
+Scan your library, and in the export tab, save it as an “Excel friendly” CSV file.
+Don’t forget to check the UTF-8 with DOM option.
+Mind that from this moment until you finish, you <strong>must not modify your library by adding, removing or editing any file here</strong>.</p>
+<p>Then we need a database to get information from.
+Get a <a href="https://www.last.fm/api" target="_blank">last.fm API</a> so we can access their database and load it into our R code.
+Sign in for an API request and get your API key, your API key is a hexadecimal number that should look similar to this one “0123456789abcdef0123456789abcdef”, and gives you permission to use their database.</p>
+<p>If you don’t have R and Rstudio ready on your computer, stop making bad decisions in your life and go download and install them.
+You will also need the urltools and jsonlite libraries.
+We will be creating some functions that will help us to retrieve information from last.fm database.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(urltools)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3200,9 +3353,16 @@ Figure 5: Time to code!
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    base <span class="ot">&lt;-</span> <span class="fu">param_set</span>(base, <span class="st">&quot;format&quot;</span>, <span class="st">&quot;json&quot;</span>)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(base)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>The function: <code>build_artist_info(artist = "Aqua")</code> generates a URL pointing to the Artist requested JSON file with information about them. If the artist doesn’t exist, you will get an URL but it won’t return anything. Copy this URL into Firefox so you can take a look at the JSON file and familiarise yourself with it. But don’t forget that we don’t need to load the JSON in firefox. We need the data to be in R. The way to do this is using the function fromJSON().</p>
+<p>The function: <code>build_artist_info(artist = "Aqua")</code> generates a URL pointing to the Artist requested JSON file with information about them.
+If the artist doesn’t exist, you will get an URL but it won’t return anything.
+Copy this URL into Firefox so you can take a look at the JSON file and familiarise yourself with it.
+But don’t forget that we don’t need to load the JSON in firefox.
+We need the data to be in R.
+The way to do this is using the function fromJSON().</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fromJSON</span>(<span class="fu">build_artist_info</span>(<span class="at">artist =</span> <span class="st">&quot;Aqua&quot;</span>))</span></code></pre></div>
-<p>This function will read the JSON, and convert it to an R format (list of lists). Don’t hesitate to save this into a dummy variable and check the info in the environment panel of Rstudio, it shouldn’t differ from what you saw on Firefox. To access the top 5 last.fm genre is as easy as navigating through the data to:</p>
+<p>This function will read the JSON, and convert it to an R format (list of lists).
+Don’t hesitate to save this into a dummy variable and check the info in the environment panel of Rstudio, it shouldn’t differ from what you saw on Firefox.
+To access the top 5 last.fm genre is as easy as navigating through the data to:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fromJSON</span>(<span class="fu">build_artist_info</span>(<span class="at">artist =</span> <span class="st">&quot;Aqua&quot;</span>))<span class="sc">$</span>artist<span class="sc">$</span>tags<span class="sc">$</span>tag<span class="sc">$</span>name</span></code></pre></div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
@@ -3212,7 +3372,10 @@ Figure 6: Rstudio showing my real last.fm API
 </p>
 </div>
 </div>
-<p>With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres! You will have to read the tracklist without a header because Tagscanner doesn’t give one. There are a few peculiarities on my example code snip shown below. I am not reading the first row as column names (Tagscanner default output), that my separator is “;” (because I am in a Spanish computer), I am forcing reading every column as a character (to avoid having to deal with factors) and forcing the file encoding (to UTF-8-DOM, as I asked you before).</p>
+<p>With our new superb functions, we are ready to import the tracklist from step 1 into R and start getting genres!
+You will have to read the tracklist without a header because Tagscanner doesn’t give one.
+There are a few peculiarities on my example code snip shown below.
+I am not reading the first row as column names (Tagscanner default output), that my separator is “;” (because I am in a Spanish computer), I am forcing reading every column as a character (to avoid having to deal with factors) and forcing the file encoding (to UTF-8-DOM, as I asked you before).</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the csv with the library information</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tracklist <span class="ot">=</span> <span class="fu">read.table</span>(r<span class="st">&quot;(B:\Doc...</span><span class="sc">\t</span><span class="st">racklist.csv)&quot;</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">header =</span> <span class="cn">FALSE</span>,</span>
@@ -3225,9 +3388,15 @@ Figure 6: Rstudio showing my real last.fm API
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># For each artist, provide me with the 5 top genre tags</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>ArtistGenresList <span class="ot">=</span> <span class="fu">sapply</span>( UniqueArtistList, <span class="cf">function</span>(x){<span class="fu">fromJSON</span>(<span class="fu">build_artist_info</span>(x))<span class="sc">$</span>artist<span class="sc">$</span>tags<span class="sc">$</span>tag<span class="sc">$</span>name})</span></code></pre></div>
-<p>Depending on the size of your artist list, this command can take a while to run, so it wouldn’t hurt trying in a subset of artists first. You will end up with a list of artist, which contains a list of 5 tags, or an empty list if they couldn’t find the artist (likely you wrote the artist name incorrectly).</p>
-<p>At this point, I decided to code some really fancy scripts to auto-tag everything based on few rules (like checking decade and genre with my list of genres, and prioritising one tag over others tag, condense them into a single tag, etc…). Remember what I said about the tools that help you doing the classification? Yes, they suck! Well, turns out that my script was doing a subpar job too. Chances are that you end up having to review all information so I decided to export all info into a spreadsheet instead, and go fully manual from there.</p>
-<p>This piece of code is to get a data frame with the artist, the 5 genres and a score for each one (starting at 0). The score should help you decide which genre is more suitable, more details below.</p>
+<p>Depending on the size of your artist list, this command can take a while to run, so it wouldn’t hurt trying in a subset of artists first.
+You will end up with a list of artist, which contains a list of 5 tags, or an empty list if they couldn’t find the artist (likely you wrote the artist name incorrectly).</p>
+<p>At this point, I decided to code some really fancy scripts to auto-tag everything based on few rules (like checking decade and genre with my list of genres, and prioritising one tag over others tag, condense them into a single tag, etc…).
+Remember what I said about the tools that help you doing the classification?
+Yes, they suck!
+Well, turns out that my script was doing a subpar job too.
+Chances are that you end up having to review all information so I decided to export all info into a spreadsheet instead, and go fully manual from there.</p>
+<p>This piece of code is to get a data frame with the artist, the 5 genres and a score for each one (starting at 0).
+The score should help you decide which genre is more suitable, more details below.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Empty data.frame</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">=</span> <span class="fu">data.frame</span>()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3258,8 +3427,18 @@ Figure 6: Rstudio showing my real last.fm API
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(ArtistGenresList)) {</span>
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    df3 <span class="ot">=</span> <span class="fu">rbind</span>(df3, <span class="fu">expand_genre_todf</span>(ArtistGenresList[i]))</span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>The scoring system can be as complicated as you want, I decided to keep it simple<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. The score will be 0 if the last.fm genre is not in my master genre list and 1 if it is. How do we do that? String comparison! Well almost that. The code shown below is a little bit more complicated than just comparing two strings, I called it “the smarter string comparison”. Don’t judge me, I need to keep coming with those catchy names to keep you reading</p>
-<p>Why the smarter string comparison? A simple string comparison between “hip-hop” and “Hip Hop” would give me a false, which I don’t want. To solve this, I am converting everything into capital letters, and generating a coefficient between them with the function adist and the number of characters to check if the tags are similar enough. The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives. If my Fortran90 teacher who (tried to) taught me to avoid using magic numbers reads this post, I am really sorry Don Requena, it will not happen again.</p>
+<p>The scoring system can be as complicated as you want, I decided to keep it simple<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.
+The score will be 0 if the last.fm genre is not in my master genre list and 1 if it is.
+How do we do that?
+String comparison!
+Well almost that.
+The code shown below is a little bit more complicated than just comparing two strings, I called it “the smarter string comparison”.
+Don’t judge me, I need to keep coming with those catchy names to keep you reading</p>
+<p>Why the smarter string comparison?
+A simple string comparison between “hip-hop” and “Hip Hop” would give me a false, which I don’t want.
+To solve this, I am converting everything into capital letters, and generating a coefficient between them with the function adist and the number of characters to check if the tags are similar enough.
+The value of 0.2 was found after trial and error, and consistently produced good results with almost no false positives.
+If my Fortran90 teacher who (tried to) taught me to avoid using magic numbers reads this post, I am really sorry Don Requena, it will not happen again.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read our list of genres</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>genrelist <span class="ot">=</span> <span class="fu">read.table</span>(r<span class="st">&quot;(B:\Documents\R\RMusicOrganiser\_ss\GenreList.csv)&quot;</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">header =</span> <span class="cn">FALSE</span>,</span>
@@ -3286,14 +3465,18 @@ Figure 7: Libre Office with the outcoming file
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(df3, <span class="at">file =</span> r<span class="st">&quot;(B:\Documentos\GitHub\RMusicOrganiser\Artist_Genre.csv)&quot;</span>,</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p>From here, there is a lot of listening to the music, assign a genre, rinse and repeat. Several months later, if you manage to finish this task instead of playing the three Mass Effect games in a row (cough…, cough…), you would need to update the original tracklist.csv. Update the genre column with your new genres, and use TagScanner to import the information into the library. Hence the importance of not updating, adding or removing songs, or the whole process would be screwed.</p>
+<p>From here, there is a lot of listening to the music, assign a genre, rinse and repeat.
+Several months later, if you manage to finish this task instead of playing the three Mass Effect games in a row (cough…, cough…), you would need to update the original tracklist.csv.
+Update the genre column with your new genres, and use TagScanner to import the information into the library.
+Hence the importance of not updating, adding or removing songs, or the whole process would be screwed.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<section class="footnotes" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>I bet you weren’t expecting him!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Which is none, I would like to happen <em>“none”</em> times!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Lies!, I started doing an extremely complex scoring system that turned out to be rubbish, then move to the simple system.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>I bet you weren’t expecting him!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Which is none, I would like to happen <em>“none”</em> times!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Lies!,
+I started doing an extremely complex scoring system that turned out to be rubbish, then move to the simple system.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->

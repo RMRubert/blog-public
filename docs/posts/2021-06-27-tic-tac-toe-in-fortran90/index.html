@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -98,14 +98,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2021-06-27"/>
 <meta property="article:created" itemprop="dateCreated" content="2021-06-27"/>
-<meta name="article:author" content="Ricardo Montero Rubert"/>
+<meta name="article:author" content="Ricardo M. Rubert"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="RMRubert&#39;s blog: Tic Tac Toe in Fortran90"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="In this post, I analyse the first comprehensive program I have ever created: A Tic-Tac-Toe game designed in Fortran90 to play against the computer! And the challenges that I had to face to make it work."/>
 <meta property="og:url" content="https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/"/>
-<meta property="og:image" content="https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/images/TTT-01.jpg"/>
+<meta property="og:image" content="https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/images/thumbnail.png"/>
+<meta property="og:image:width" content="321"/>
+<meta property="og:image:height" content="321"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="RMRubert&#39;s blog"/>
 
@@ -114,18 +116,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:title" content="RMRubert&#39;s blog: Tic Tac Toe in Fortran90"/>
 <meta property="twitter:description" content="In this post, I analyse the first comprehensive program I have ever created: A Tic-Tac-Toe game designed in Fortran90 to play against the computer! And the challenges that I had to face to make it work."/>
 <meta property="twitter:url" content="https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/"/>
-<meta property="twitter:image" content="https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/images/TTT-01.jpg"/>
+<meta property="twitter:image" content="https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/images/thumbnail.png"/>
+<meta property="twitter:image:width" content="321"/>
+<meta property="twitter:image:height" content="321"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","draft","citation","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Tic Tac Toe in Fortran90"]},{"type":"character","attributes":{},"value":["In this post, I analyse the first comprehensive program I have ever created: A Tic-Tac-Toe game designed in Fortran90 to play against the computer! And the challenges that I had to face to make it work."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["first_name","last_name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ricardo"]},{"type":"character","attributes":{},"value":["Montero Rubert"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/about"]}]}]},{"type":"character","attributes":{},"value":["06-27-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/TTT-01.jpg"]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","draft","citation","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Tic Tac Toe in Fortran90"]},{"type":"character","attributes":{},"value":["In this post, I analyse the first comprehensive program I have ever created: A Tic-Tac-Toe game designed in Fortran90 to play against the computer! And the challenges that I had to face to make it work."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["first_name","last_name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ricardo"]},{"type":"character","attributes":{},"value":["M. Rubert"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/about"]}]}]},{"type":"character","attributes":{},"value":["06-27-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/thumbnail.png"]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["downloads/TicTacToe.7z","downloads/TicTacToe.F90","images/Flowchart-02.SVG","images/Parrot.png","images/RCD-System-03.SVG","images/RCD-System-Win-04.SVG","images/Subroutine-IA-06.SVG","images/Tic-Tac-Toe-Figures.pptx","images/TTT-01.jpg","tic-tac-toe-in-fortran90_files/anchor-4.2.2/anchor.min.js","tic-tac-toe-in-fortran90_files/bowser-1.9.3/bowser.min.js","tic-tac-toe-in-fortran90_files/distill-2.2.21/template.v2.js","tic-tac-toe-in-fortran90_files/header-attrs-2.11/header-attrs.js","tic-tac-toe-in-fortran90_files/header-attrs-2.22/header-attrs.js","tic-tac-toe-in-fortran90_files/jquery-3.6.0/jquery-3.6.0.js","tic-tac-toe-in-fortran90_files/jquery-3.6.0/jquery-3.6.0.min.js","tic-tac-toe-in-fortran90_files/jquery-3.6.0/jquery-3.6.0.min.map","tic-tac-toe-in-fortran90_files/popper-2.6.0/popper.min.js","tic-tac-toe-in-fortran90_files/tippy-6.2.7/tippy-bundle.umd.min.js","tic-tac-toe-in-fortran90_files/tippy-6.2.7/tippy-light-border.css","tic-tac-toe-in-fortran90_files/tippy-6.2.7/tippy.css","tic-tac-toe-in-fortran90_files/tippy-6.2.7/tippy.umd.min.js","tic-tac-toe-in-fortran90_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["downloads/TicTacToe.7z","downloads/TicTacToe.F90","images/Flowchart-02.SVG","images/Parrot.png","images/RCD-System-03.SVG","images/RCD-System-Win-04.SVG","images/Subroutine-IA-06.SVG","images/thumbnail.png","images/Tic-Tac-Toe-Figures.pptx","images/TTT-01.jpg","tic-tac-toe-in-fortran90_files/anchor-4.2.2/anchor.min.js","tic-tac-toe-in-fortran90_files/bowser-1.9.3/bowser.min.js","tic-tac-toe-in-fortran90_files/distill-2.2.21/template.v2.js","tic-tac-toe-in-fortran90_files/header-attrs-2.11/header-attrs.js","tic-tac-toe-in-fortran90_files/header-attrs-2.22/header-attrs.js","tic-tac-toe-in-fortran90_files/jquery-3.6.0/jquery-3.6.0.js","tic-tac-toe-in-fortran90_files/jquery-3.6.0/jquery-3.6.0.min.js","tic-tac-toe-in-fortran90_files/jquery-3.6.0/jquery-3.6.0.min.map","tic-tac-toe-in-fortran90_files/popper-2.6.0/popper.min.js","tic-tac-toe-in-fortran90_files/tippy-6.2.7/tippy-bundle.umd.min.js","tic-tac-toe-in-fortran90_files/tippy-6.2.7/tippy-light-border.css","tic-tac-toe-in-fortran90_files/tippy-6.2.7/tippy.css","tic-tac-toe-in-fortran90_files/tippy-6.2.7/tippy.umd.min.js","tic-tac-toe-in-fortran90_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -472,8 +476,8 @@ d-title {
 </style>
 
 <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../../site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
-<link href="../../site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
 <script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
 <script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -2516,7 +2520,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.22/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.29/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2530,7 +2534,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <script data-goatcounter="https://analytics.rmrubert.eu/count"
         async src="//gc.zgo.at/count.js"></script>
 
-<a rel="me" href="https://im-in.space/@rmrubert">Mastodon</a>
+<a rel="me" href="https://im-in.space/@rmrubert"> </a>
 <!--/radix_placeholder_site_in_header-->
 
 
@@ -2541,7 +2545,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Tic Tac Toe in Fortran90","description":"In this post, I analyse the first comprehensive program I have ever created: A Tic-Tac-Toe game designed in Fortran90 to play against the computer! And the challenges that I had to face to make it work.","authors":[{"author":"Ricardo Montero Rubert","authorURL":"https://blog.rmrubert.eu/about","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-06-27T00:00:00.000+01:00","citationText":"Montero Rubert, 2021"}
+{"title":"Tic Tac Toe in Fortran90","description":"In this post, I analyse the first comprehensive program I have ever created: A Tic-Tac-Toe game designed in Fortran90 to play against the computer! And the challenges that I had to face to make it work.","authors":[{"author":"Ricardo M. Rubert","authorURL":"https://blog.rmrubert.eu/about","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-06-27T00:00:00.000+02:00","citationText":"M. Rubert, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2572,6 +2576,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 <div class="d-title">
 <h1>Tic Tac Toe in Fortran90</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 <p><p>In this post, I analyse the first comprehensive program I have ever created: A Tic-Tac-Toe game designed in Fortran90 to play against the computer! And the challenges that I had to face to make it work.</p></p>
@@ -2593,7 +2598,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>I start looking through back-ups and a little bit after I found the original code I wrote. The code has all the comments in Spanish. To be fair, the comments themselves could be another post on their own.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="images/TTT-01.jpg" alt="Screenshot of the game."  />
+<img src="images/TTT-01.jpg" alt="Screenshot of the game." width="490" />
 <p class="caption">
 Figure 1: Screenshot of the game.
 </p>
@@ -2671,7 +2676,7 @@ Figure 5: Example of how the IA() function calculates the score to place a token
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">!tablero(3,1:3)=(/0,0,0/)</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">Print</span><span class="kw">*</span>, <span class="st">&quot;#######################&quot;</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Print</span><span class="kw">*</span>, <span class="st">&quot;# Juego de 3 en linea #&quot;</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">Print</span><span class="kw">*</span>, <span class="st">&quot;#   Ricardo Montero   #&quot;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">Print</span><span class="kw">*</span>, <span class="st">&quot;#   Ricardo M.   #&quot;</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">Print</span><span class="kw">*</span>, <span class="st">&quot;#######################&quot;</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">Do</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">Do</span> <span class="kw">while</span> (<span class="op">.not.</span>(sel <span class="op">==</span> <span class="st">&quot;s&quot;</span> <span class="op">.or.</span> sel <span class="op">==</span> <span class="st">&quot;S&quot;</span> <span class="op">.or.</span> sel <span class="op">==</span> <span class="st">&quot;n&quot;</span> <span class="op">.or.</span> sel<span class="op">==</span><span class="st">&quot;N&quot;</span>))</span>

@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -98,14 +98,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2023-12-27"/>
 <meta property="article:created" itemprop="dateCreated" content="2023-12-27"/>
-<meta name="article:author" content="Ricardo Montero Rubert"/>
+<meta name="article:author" content="Ricardo M. Rubert"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="RMRubert&#39;s blog: How to remove silence at start and end of songs in your music collection"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="After failing to remove the songs&#39;s silences only from the start or the end with FFmpeg, I ended up using an open-source tool (mp3splt-gtk) to achieve this. It did not have a particular good default settings for this purpose but it ended up doing a perfect job."/>
 <meta property="og:url" content="https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/"/>
-<meta property="og:image" content="https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/images/miniatura.jpg"/>
+<meta property="og:image" content="https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/images/thumbnail.png"/>
+<meta property="og:image:width" content="321"/>
+<meta property="og:image:height" content="321"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="RMRubert&#39;s blog"/>
 
@@ -114,18 +116,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:title" content="RMRubert&#39;s blog: How to remove silence at start and end of songs in your music collection"/>
 <meta property="twitter:description" content="After failing to remove the songs&#39;s silences only from the start or the end with FFmpeg, I ended up using an open-source tool (mp3splt-gtk) to achieve this. It did not have a particular good default settings for this purpose but it ended up doing a perfect job."/>
 <meta property="twitter:url" content="https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/"/>
-<meta property="twitter:image" content="https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/images/miniatura.jpg"/>
+<meta property="twitter:image" content="https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/images/thumbnail.png"/>
+<meta property="twitter:image:width" content="321"/>
+<meta property="twitter:image:height" content="321"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","citation","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["How to remove silence at start and end of songs in your music collection"]},{"type":"character","attributes":{},"value":["After failing to remove the songs's silences only from the start or the end with FFmpeg, I ended up using an open-source tool (mp3splt-gtk) to achieve this. It did not have a particular good default settings for this purpose but it ended up doing a perfect job."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Ricardo Montero Rubert"]}]}]},{"type":"character","attributes":{},"value":["2023-12-27"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/miniatura.jpg"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","citation","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["How to remove silence at start and end of songs in your music collection"]},{"type":"character","attributes":{},"value":["After failing to remove the songs's silences only from the start or the end with FFmpeg, I ended up using an open-source tool (mp3splt-gtk) to achieve this. It did not have a particular good default settings for this purpose but it ended up doing a perfect job."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Ricardo M. Rubert"]}]}]},{"type":"character","attributes":{},"value":["2023-12-27"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/thumbnail.png"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/trimming.ps1","images/audacity_720px.jpg","images/ffmpeg_720px.jpg","images/miniatura.jpg","images/mp3splt_720px.jpg","images/mptrim.jpg","images/radio_720px.jpg","removing-silence-from-songs-using-ffmpeg_files/anchor-4.2.2/anchor.min.js","removing-silence-from-songs-using-ffmpeg_files/bowser-1.9.3/bowser.min.js","removing-silence-from-songs-using-ffmpeg_files/distill-2.2.21/template.v2.js","removing-silence-from-songs-using-ffmpeg_files/header-attrs-2.27/header-attrs.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.min.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.min.map","removing-silence-from-songs-using-ffmpeg_files/popper-2.6.0/popper.min.js","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy-bundle.umd.min.js","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy-light-border.css","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy.css","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy.umd.min.js","removing-silence-from-songs-using-ffmpeg_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/trimming.ps1","images/audacity_720px.jpg","images/ffmpeg_720px.jpg","images/miniatura.jpg","images/mp3splt_720px.jpg","images/mptrim.jpg","images/radio_720px.jpg","images/thumbnail.png","removing-silence-from-songs-using-ffmpeg_files/anchor-4.2.2/anchor.min.js","removing-silence-from-songs-using-ffmpeg_files/bowser-1.9.3/bowser.min.js","removing-silence-from-songs-using-ffmpeg_files/distill-2.2.21/template.v2.js","removing-silence-from-songs-using-ffmpeg_files/header-attrs-2.27/header-attrs.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.min.js","removing-silence-from-songs-using-ffmpeg_files/jquery-3.6.0/jquery-3.6.0.min.map","removing-silence-from-songs-using-ffmpeg_files/popper-2.6.0/popper.min.js","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy-bundle.umd.min.js","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy-light-border.css","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy.css","removing-silence-from-songs-using-ffmpeg_files/tippy-6.2.7/tippy.umd.min.js","removing-silence-from-songs-using-ffmpeg_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -472,8 +476,8 @@ d-title {
 </style>
 
 <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../../site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
-<link href="../../site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
 <script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
 <script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -2516,7 +2520,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.27/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.29/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2530,7 +2534,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <script data-goatcounter="https://analytics.rmrubert.eu/count"
         async src="//gc.zgo.at/count.js"></script>
 
-<a rel="me" href="https://im-in.space/@rmrubert">Mastodon</a>
+<a rel="me" href="https://im-in.space/@rmrubert"> </a>
 <!--/radix_placeholder_site_in_header-->
 
 
@@ -2541,7 +2545,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"How to remove silence at start and end of songs in your music collection","description":"After failing to remove the songs's silences only from the start or the end with FFmpeg, I ended up using an open-source tool (mp3splt-gtk) to achieve this. It did not have a particular good default settings for this purpose but it ended up doing a perfect job.","authors":[{"author":"Ricardo Montero Rubert","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2023-12-27T00:00:00.000+00:00","citationText":"Rubert, 2023"}
+{"title":"How to remove silence at start and end of songs in your music collection","description":"After failing to remove the songs's silences only from the start or the end with FFmpeg, I ended up using an open-source tool (mp3splt-gtk) to achieve this. It did not have a particular good default settings for this purpose but it ended up doing a perfect job.","authors":[{"author":"Ricardo M. Rubert","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2023-12-27T00:00:00.000+01:00","citationText":"Rubert, 2023"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2580,7 +2584,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 <div class="d-byline">
   
-  Ricardo Montero Rubert
+  Ricardo M. Rubert
   
 <br/>2023-12-27
 </div>
@@ -2590,7 +2594,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>In case you don’t know I have an ongoing project of restoring an old radio which has kept me busy (more or less) for the last 5 years. In fact, this is the second post related to this topic. The first post is about <a href="https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api">organising your music library</a>. In that case the organising was required so that each song has the correct idiom, decade, and genre in order to create different radio stations (playlists).</p>
 <div class="layout-chunk" data-layout="l-middle">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="images/radio_720px.jpg" alt="The guilty one"  />
+<img src="images/radio_720px.jpg" alt="The guilty one" width="360" />
 <p class="caption">
 Figure 1: The guilty one
 </p>

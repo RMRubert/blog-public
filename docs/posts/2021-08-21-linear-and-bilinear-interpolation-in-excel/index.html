@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -97,16 +98,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2021-08-21"/>
 <meta property="article:created" itemprop="dateCreated" content="2021-08-21"/>
-<meta name="article:author" content="Ricardo Montero Rubert"/>
+<meta name="article:author" content="Ricardo M. Rubert"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="RMRubert&#39;s blog: Linear and bilinear interpolation in Excel"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="An excel template to search in a table of values for certain item, and if it doesn&#39;t exist, then performs a linear intepolation between the 2 closest values."/>
 <meta property="og:url" content="https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/"/>
-<meta property="og:image" content="https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/images/Excel_Inter_01.png"/>
-<meta property="og:image:width" content="1052"/>
-<meta property="og:image:height" content="848"/>
+<meta property="og:image" content="https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/images/thumbnail.png"/>
+<meta property="og:image:width" content="321"/>
+<meta property="og:image:height" content="258"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="RMRubert&#39;s blog"/>
 
@@ -115,20 +116,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:title" content="RMRubert&#39;s blog: Linear and bilinear interpolation in Excel"/>
 <meta property="twitter:description" content="An excel template to search in a table of values for certain item, and if it doesn&#39;t exist, then performs a linear intepolation between the 2 closest values."/>
 <meta property="twitter:url" content="https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/"/>
-<meta property="twitter:image" content="https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/images/Excel_Inter_01.png"/>
-<meta property="twitter:image:width" content="1052"/>
-<meta property="twitter:image:height" content="848"/>
+<meta property="twitter:image" content="https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/images/thumbnail.png"/>
+<meta property="twitter:image:width" content="321"/>
+<meta property="twitter:image:height" content="258"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","draft","citation","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Linear and bilinear interpolation in Excel"]},{"type":"character","attributes":{},"value":["An excel template to search in a table of values for certain item, and if it doesn't exist, then performs a linear intepolation between the 2 closest values."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["first_name","last_name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ricardo"]},{"type":"character","attributes":{},"value":["Montero Rubert"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/about"]}]}]},{"type":"character","attributes":{},"value":["08-21-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/Excel_Inter_01.png"]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","draft","citation","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Linear and bilinear interpolation in Excel"]},{"type":"character","attributes":{},"value":["An excel template to search in a table of values for certain item, and if it doesn't exist, then performs a linear intepolation between the 2 closest values."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["first_name","last_name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ricardo"]},{"type":"character","attributes":{},"value":["M. Rubert"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/about"]}]}]},{"type":"character","attributes":{},"value":["08-21-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/thumbnail.png"]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/"]},{"type":"character","attributes":{},"value":["https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["images/Excel_Inter_01.png","images/Excel_Inter_02.png","images/Excel_Inter_03.png","linear-and-bilinear-interpolation-in-excel_files/anchor-4.2.2/anchor.min.js","linear-and-bilinear-interpolation-in-excel_files/bowser-1.9.3/bowser.min.js","linear-and-bilinear-interpolation-in-excel_files/distill-2.2.21/template.v2.js","linear-and-bilinear-interpolation-in-excel_files/header-attrs-2.11/header-attrs.js","linear-and-bilinear-interpolation-in-excel_files/jquery-3.6.0/jquery-3.6.0.js","linear-and-bilinear-interpolation-in-excel_files/jquery-3.6.0/jquery-3.6.0.min.js","linear-and-bilinear-interpolation-in-excel_files/jquery-3.6.0/jquery-3.6.0.min.map","linear-and-bilinear-interpolation-in-excel_files/popper-2.6.0/popper.min.js","linear-and-bilinear-interpolation-in-excel_files/tippy-6.2.7/tippy-bundle.umd.min.js","linear-and-bilinear-interpolation-in-excel_files/tippy-6.2.7/tippy-light-border.css","linear-and-bilinear-interpolation-in-excel_files/tippy-6.2.7/tippy.css","linear-and-bilinear-interpolation-in-excel_files/tippy-6.2.7/tippy.umd.min.js","linear-and-bilinear-interpolation-in-excel_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["images/Excel_Inter_01.png","images/Excel_Inter_02.png","images/Excel_Inter_03.png","images/thumbnail.png","linear-and-bilinear-interpolation-in-excel_files/anchor-4.2.2/anchor.min.js","linear-and-bilinear-interpolation-in-excel_files/bowser-1.9.3/bowser.min.js","linear-and-bilinear-interpolation-in-excel_files/distill-2.2.21/template.v2.js","linear-and-bilinear-interpolation-in-excel_files/header-attrs-2.11/header-attrs.js","linear-and-bilinear-interpolation-in-excel_files/jquery-3.6.0/jquery-3.6.0.js","linear-and-bilinear-interpolation-in-excel_files/jquery-3.6.0/jquery-3.6.0.min.js","linear-and-bilinear-interpolation-in-excel_files/jquery-3.6.0/jquery-3.6.0.min.map","linear-and-bilinear-interpolation-in-excel_files/popper-2.6.0/popper.min.js","linear-and-bilinear-interpolation-in-excel_files/tippy-6.2.7/tippy-bundle.umd.min.js","linear-and-bilinear-interpolation-in-excel_files/tippy-6.2.7/tippy-light-border.css","linear-and-bilinear-interpolation-in-excel_files/tippy-6.2.7/tippy.css","linear-and-bilinear-interpolation-in-excel_files/tippy-6.2.7/tippy.umd.min.js","linear-and-bilinear-interpolation-in-excel_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -475,8 +476,8 @@ d-title {
 </style>
 
 <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../../site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
-<link href="../../site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
 <script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
 <script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -2519,7 +2520,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.29/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2533,7 +2534,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <script data-goatcounter="https://analytics.rmrubert.eu/count"
         async src="//gc.zgo.at/count.js"></script>
 
-<a rel="me" href="https://im-in.space/@rmrubert">Mastodon</a>
+<a rel="me" href="https://im-in.space/@rmrubert"> </a>
 <!--/radix_placeholder_site_in_header-->
 
 
@@ -2544,7 +2545,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Linear and bilinear interpolation in Excel","description":"An excel template to search in a table of values for certain item, and if it doesn't exist, then performs a linear intepolation between the 2 closest values.","authors":[{"author":"Ricardo Montero Rubert","authorURL":"https://blog.rmrubert.eu/about","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-21T00:00:00.000+01:00","citationText":"Montero Rubert, 2021"}
+{"title":"Linear and bilinear interpolation in Excel","description":"An excel template to search in a table of values for certain item, and if it doesn't exist, then performs a linear intepolation between the 2 closest values.","authors":[{"author":"Ricardo M. Rubert","authorURL":"https://blog.rmrubert.eu/about","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-21T00:00:00.000+02:00","citationText":"M. Rubert, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2575,6 +2576,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 <div class="d-title">
 <h1>Linear and bilinear interpolation in Excel</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 <p><p>An excel template to search in a table of values for certain item, and if it doesn’t exist, then performs a linear intepolation between the 2 closest values.</p></p>
@@ -2588,10 +2590,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
+<p>Do you often need to do linear interpolation in Excel from a table of values? Does it bother you a hell of a lot that some people choose a value in between instead of doing a linear interpolation? Do you like having intricate formulas in your Excel that nobody else know what they do? Do you want to become an Excel Wizard?</p>
 <aside>
 <strong>TL;DR:</strong> Quick <a href="https://github.com/RMRubert/ExcelsUtils/raw/master/Interpolation/Linear-Bilinear-IP.xlsx" class="r-save-link" target="_blank">Download</a> of Excel template.
 </aside>
-<p>Do you often need to do linear interpolation in Excel from a table of values? Does it bother you a hell of a lot that some people choose a value in between instead of doing a linear interpolation? Do you like having intricate formulas in your Excel that nobody else know what they do? Do you want to become an Excel Wizard?</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="images/Excel_Inter_01.png" alt="Screenshot of the template" width="526" />
@@ -2669,11 +2671,11 @@ f(x, y) = a_{00} + a_{10}x + a_{01}y + a_{11}xy
 <h3 class="appendix" id="acknowledgments">Acknowledgments</h3>
 <p>Figure <a href="#fig:wikibili">3</a> is from <a href="https://en.wikipedia.org/wiki/Bilinear_interpolation#/media/File:Comparison_of_1D_and_2D_interpolation.svg" target="_blank">Cmglee</a>, CC BY-SA 4.0.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<section class="footnotes" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>Definitive because I don’t think I will update it any time soon.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>It is also a rubbish regression model, but that is none of our business.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Definitive because I don’t think I will update it any time soon.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>It is also a rubbish regression model, but that is none of our business.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->

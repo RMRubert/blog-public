@@ -2,66 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://blog.rmrubert.eu/about.html</loc>
-    <lastmod>2023-01-18T21:39:18+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rmrubert.eu/Contact.html</loc>
-    <lastmod>2023-01-28T20:38:08+00:00</lastmod>
+    <lastmod>2024-12-08T10:12:04+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/CV.html</loc>
-    <lastmod>2024-01-14T22:05:41+00:00</lastmod>
+    <lastmod>2024-12-02T10:50:47+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/</loc>
-    <lastmod>2024-02-29T20:51:55+00:00</lastmod>
+    <lastmod>2024-12-02T10:29:17+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2023-12-27-how-to-remove-silence-at-start-and-end-of-songs-in-your-music-collection/</loc>
-    <lastmod>2024-08-04T13:59:32+01:00</lastmod>
+    <lastmod>2024-12-08T12:32:39+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2023-06-17-making-my-first-game-another-pong-in-python/</loc>
-    <lastmod>2024-02-29T20:47:00+00:00</lastmod>
+    <lastmod>2024-12-08T12:32:20+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2022-12-30-repurposing-an-old-pinnacle-tv-capture-card/</loc>
-    <lastmod>2024-08-04T13:37:23+01:00</lastmod>
+    <lastmod>2024-12-08T00:04:23+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2022-10-27-use-of-jupyter-notebooks-on-arcgis-pro-to-display-flood-results/</loc>
-    <lastmod>2023-01-11T21:08:02+00:00</lastmod>
+    <lastmod>2024-12-07T23:57:09+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2022-06-18-a-script-to-automatize-the-plot-of-several-raster-in-the-same-q-gis-layout/</loc>
-    <lastmod>2022-12-08T10:15:27+00:00</lastmod>
+    <lastmod>2024-12-07T23:36:50+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2021-12-24-an-analysis-of-the-effects-of-panel-markers-on-a-cross-sections-conveyance-curve/</loc>
-    <lastmod>2024-08-09T20:14:18+01:00</lastmod>
+    <lastmod>2024-12-07T17:23:23+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2021-08-21-linear-and-bilinear-interpolation-in-excel/</loc>
-    <lastmod>2021-11-16T22:07:15+00:00</lastmod>
+    <lastmod>2024-12-07T17:02:37+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2021-06-27-tic-tac-toe-in-fortran90/</loc>
-    <lastmod>2023-06-16T22:30:39+01:00</lastmod>
+    <lastmod>2024-12-07T16:46:13+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2021-06-12-classifying-your-music-library-by-genre-using-r-and-lastfm-api/</loc>
-    <lastmod>2021-11-16T18:23:05+00:00</lastmod>
+    <lastmod>2024-12-07T12:51:48+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2020-09-22-games-in-excelvba-2048-and-minesweeper/</loc>
-    <lastmod>2021-11-16T22:13:50+00:00</lastmod>
+    <lastmod>2024-12-07T12:46:11+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2020-07-03-uk-map/</loc>
-    <lastmod>2021-10-07T18:44:28+01:00</lastmod>
+    <lastmod>2024-12-07T11:07:30+01:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rmrubert.eu/posts/2020-06-30-notepad-theme-solarized-dark-version-for-tuflow-fm-and-markdown-files/</loc>
-    <lastmod>2021-10-08T22:29:54+01:00</lastmod>
+    <lastmod>2024-12-07T12:22:14+01:00</lastmod>
   </url>
 </urlset>

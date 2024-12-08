@@ -12,7 +12,7 @@ character:: sel="w"
 !tablero(3,1:3)=(/0,0,0/)
 Print*, "#######################"
 Print*, "# Juego de 3 en linea #"
-Print*, "#   Ricardo Montero   #"
+Print*, "#   Ricardo M.   #"
 Print*, "#######################"
 Do
 	Do while (.not.(sel == "s" .or. sel == "S" .or. sel == "n" .or. sel=="N"))
